@@ -7,20 +7,20 @@ pipeline{
         stage('Build'){
             steps{
                 sh '''
-                    ./var/jenkins_home/workspace/pipelinejenkinsfile/jenkins/build/mvn.sh mvn -B -DskipTests clean package
-                    ./var/jenkins_home/workspace/pipelinejenkinsfile/jenkins/build/build.sh
+                    ./jenkins/build/mvn.sh mvn -B -DskipTests clean package
+                    ./jenkins/build/build.sh
                 '''
             }
         }
         stage('Test'){
             steps{
-                sh './var/jenkins_home/workspace/pipelinejenkinsfile/jenkins/tests/mvn.sh mvn test'
+                sh './jenkins/tests/mvn.sh mvn test'
             }
 
         }
         stage('Push'){
             steps{
-                sh './var/jenkins_home/workspace/pipelinejenkinsfile/jenkins/push/push.sh'
+                sh './jenkins/push/push.sh'
             }
 
         }
