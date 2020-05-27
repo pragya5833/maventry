@@ -3,6 +3,6 @@ echo "**********************"
 echo "pushing image"
 echo "**********************"
 IMAGE="mavenproject"
-sudo docker login -u pragya5833 -p $PASS
-sudo docker tag $IMAGE:$BUILD_TAG pragya5833/$IMAGE:$BUILD_TAG
-sudo docker push pragya5833/$IMAGE:$BUILD_TAG
+docker login -u pragya5833 -p $PASS
+docker tag $IMAGE:$BUILD_TAG pragya5833/$IMAGE:$BUILD_TAG
+docker push pragya5833/$IMAGE:$BUILD_TAG

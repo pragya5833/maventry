@@ -3,4 +3,4 @@
 WORKSPACE=/var/jenkins_home/workspace/pipelinejenkinsfile
 cp -f $WORKSPACE/sample-app/target/*.jar  $WORKSPACE/jenkins/build
 cd $WORKSPACE/jenkins/build
-sudo docker-compose build
+docker-compose build
