@@ -1,5 +1,6 @@
 #! /bin/bash
 #copy new jar to build folder
-cp -f /home/shav/questionmaker/jenkins/pipeline/simple-java-maven-app/target/*.jar  /home/shav/questionmaker/jenkins/pipeline/jenkins/build
-cd /home/shav/questionmaker/jenkins/pipeline/jenkins/build
+WORKSPACE=/var/jenkins_home/workspace/pipelinejenkinsfile
+cp -f $WORKSPACE/sample-app/target/*.jar  $WORKSPACE/jenkins/build
+cd $WORKSPACE/jenkins/build
 sudo docker-compose build

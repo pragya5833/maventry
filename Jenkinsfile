@@ -4,20 +4,20 @@ pipeline{
         stage('Build'){
             steps{
                 sh '''
-                    ./home/shav/questionmaker/jenkins/pipeline/jenkins/build/mvn.sh mvn -B -DskipTests clean package
-                    ./home/shav/questionmaker/jenkins/pipeline/jenkins/build/build.sh
+                    ./var/jenkins_home/workspace/pipelinejenkinsfile/jenkins/build/mvn.sh mvn -B -DskipTests clean package
+                    ./var/jenkins_home/workspace/pipelinejenkinsfile/jenkins/build/build.sh
                 '''
             }
         }
         stage('Test'){
             steps{
-                sh './home/shav/questionmaker/jenkins/pipeline/jenkins/tests/mvn.sh mvn test'
+                sh './var/jenkins_home/workspace/pipelinejenkinsfile/jenkins/tests/mvn.sh mvn test'
             }
 
         }
         stage('Push'){
             steps{
-                sh './home/shav/questionmaker/jenkins/pipeline/jenkins/push/push.sh'
+                sh './var/jenkins_home/workspace/pipelinejenkinsfile/jenkins/push/push.sh'
             }
 
         }
